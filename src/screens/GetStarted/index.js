@@ -22,7 +22,15 @@ const GetStarted = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text>Get Started</Text>
+        <Text
+          style={{
+            fontSize: 18,
+            fontFamily: fonts.Medium,
+            color: colors.white,
+            textAlign: 'center',
+          }}>
+          Get Started
+        </Text>
       </View>
     </View>
   );

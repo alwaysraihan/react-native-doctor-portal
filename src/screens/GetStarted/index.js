@@ -14,7 +14,7 @@ const GetStarted = ({navigation}) => {
         <Text style={styles.titleText}>Doctor</Text>
       </View>
       <WhiteSpace height={90} />
-      <Button onPress={() => navigation.replace('Home')} />
+      <Button onPress={() => navigation.replace('MainApp')} />
     </View>
   );
 };

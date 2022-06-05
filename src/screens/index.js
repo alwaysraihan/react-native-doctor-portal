@@ -1,3 +1,4 @@
 import GetStarted from './GetStarted';
+import Home from './Home';
 
-export {GetStarted};
+export {GetStarted, Home};

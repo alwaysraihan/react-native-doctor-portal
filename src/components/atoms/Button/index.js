@@ -3,9 +3,9 @@ import React from 'react';
 import {fonts} from '../../../res/fonts';
 import {colors} from '../../../res/colors';
 
-const Button = () => {
+const Button = ({onPress}) => {
   return (
-    <TouchableOpacity style={styles.btnContainer}>
+    <TouchableOpacity style={styles.btnContainer} onPress={onPress}>
       <Text style={styles.btnText}>Get Started</Text>
     </TouchableOpacity>
   );

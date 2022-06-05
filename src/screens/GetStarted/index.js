@@ -5,7 +5,7 @@ import {colors} from '../../res/colors';
 import {fonts} from '../../res/fonts';
 import {Button, WhiteSpace} from '../../components';
 
-const GetStarted = () => {
+const GetStarted = ({navigation}) => {
   return (
     <View style={styles.mainScreen}>
       <Image source={DoctorImg} style={styles.heroImage} />
@@ -14,7 +14,7 @@ const GetStarted = () => {
         <Text style={styles.titleText}>Doctor</Text>
       </View>
       <WhiteSpace height={90} />
-      <Button />
+      <Button onPress={() => navigation.replace('Home')} />
     </View>
   );
 };

@@ -3,35 +3,18 @@ import React from 'react';
 import {DoctorImg} from '../../res/images/Illustrations/inex';
 import {colors} from '../../res/colors';
 import {fonts} from '../../res/fonts';
+import {Button, WhiteSpace} from '../../components';
 
 const GetStarted = () => {
   return (
     <View style={styles.mainScreen}>
       <Image source={DoctorImg} style={styles.heroImage} />
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Booking Your Doctor</Text>
-        <Text style={styles.titleText}>Online</Text>
+        <Text style={styles.titleText}>Booking Your Best</Text>
+        <Text style={styles.titleText}>Doctor</Text>
       </View>
-      <View
-        style={{
-          marginTop: 20,
-          backgroundColor: colors.primary,
-          height: 50,
-          width: 250,
-          borderRadius: 20,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text
-          style={{
-            fontSize: 18,
-            fontFamily: fonts.Medium,
-            color: colors.white,
-            textAlign: 'center',
-          }}>
-          Get Started
-        </Text>
-      </View>
+      <WhiteSpace height={90} />
+      <Button />
     </View>
   );
 };

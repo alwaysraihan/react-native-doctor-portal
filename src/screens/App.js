@@ -1,14 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+// In App.js in a new project
 
-const App = () => {
+import * as React from 'react';
+
+import {NavigationContainer} from '@react-navigation/native';
+import Router from '../router';
+
+function App() {
   return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
+    <NavigationContainer>
+      <Router />
+    </NavigationContainer>
   );
-};
+}
 
 export default App;
-
-const styles = StyleSheet.create({});

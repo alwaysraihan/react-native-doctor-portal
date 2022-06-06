@@ -1,3 +1,4 @@
 import Header from './Header';
 import BottomNavigation from './BottomNavigation';
-export {Header, BottomNavigation};
+import BoxItemTopProduct from './BoxItemTopProduct';
+export {Header, BottomNavigation, BoxItemTopProduct};

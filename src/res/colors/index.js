@@ -1,6 +1,6 @@
 const mainColors = {
   cyan: '#06b6d4',
-  black: '#00000',
+  black: '#000000',
   white: '#ffffff',
   grey: '#8D92A3',
   peace: '#a4b0be',

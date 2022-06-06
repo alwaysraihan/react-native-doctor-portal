@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import {DoctorImg} from '../../res/images/Illustrations/index';
-import {Header} from '../../components/molecules';
+import {BoxItemTopProduct, Header} from '../../components/molecules';
 import {
   IC_Search,
   IC_Fruits,
@@ -23,6 +23,7 @@ import {
 import {colors} from '../../res/colors';
 import {fonts} from '../../res/fonts';
 import BoxItemCategories from '../../components/molecules/BoxItemCategories';
+import WhiteSpace from '../../components/atoms/WhiteSpace';
 
 const Home = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -113,6 +114,7 @@ const Home = ({navigation}) => {
               />
             </ScrollView>
           </View>
+          <WhiteSpace height={24} />
           {/* Top Products  */}
           <View>
             <View style={styles.wrappHearTopProducts}>
@@ -121,6 +123,20 @@ const Home = ({navigation}) => {
               <TouchableOpacity>
                 <Text style={styles.seeAllText}>See All</Text>
               </TouchableOpacity>
+            </View>
+            {/* boxProductSection  */}
+            <View style={styles.sectionBoxTopProduct}>
+              {dataTopDoctors.map((doctor, index) => {
+                return (
+                  <BoxItemTopProduct
+                    key={index}
+                    bgColor={doctor.bgColor}
+                    icon={doctor.icon}
+                    text={doctor.name}
+                    price={doctor.price}
+                  />
+                );
+              })}
             </View>
           </View>
         </ScrollView>
@@ -153,12 +169,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingVertical: 20,
+    marginBottom: 10,
   },
   titleTopProducts: {
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: fonts.SemiBold,
     color: colors.primary,
   },
-  seeAllText: {},
+  seeAllText: {
+    color: colors.black,
+    fontFamily: fonts.Medium,
+    fontSize: 12,
+  },
+  sectionBoxTopProduct: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
 });

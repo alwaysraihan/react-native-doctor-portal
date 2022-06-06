@@ -7,6 +7,7 @@ import {
   StatusBar,
   ScrollView,
   TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import {DoctorImg} from '../../res/images/Illustrations/index';
@@ -112,6 +113,16 @@ const Home = ({navigation}) => {
               />
             </ScrollView>
           </View>
+          {/* Top Products  */}
+          <View>
+            <View style={styles.wrappHearTopProducts}>
+              <Text style={styles.titleTopProducts}>Best Doctors</Text>
+
+              <TouchableOpacity>
+                <Text style={styles.seeAllText}>See All</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -137,4 +148,17 @@ const styles = StyleSheet.create({
     color: colors.primary,
     padding: 20,
   },
+  wrappHearTopProducts: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+  },
+  titleTopProducts: {
+    fontSize: 18,
+    fontFamily: fonts.SemiBold,
+    color: colors.primary,
+  },
+  seeAllText: {},
 });

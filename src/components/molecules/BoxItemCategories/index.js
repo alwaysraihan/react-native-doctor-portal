@@ -15,6 +15,7 @@ export default BoxItemCategories;
 
 const styles = StyleSheet.create({
   container: {
+    paddingHorizontal: 25,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 17,

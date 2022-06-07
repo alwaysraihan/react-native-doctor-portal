@@ -1,16 +1,16 @@
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import WhiteSpace from '../../atoms/WhiteSpace';
-import {fonts, IC_Love} from '../../../res';
+import {colors, fonts, IC_Love} from '../../../res';
 
-const BoxItemTopProduct = (bgColor, icon, text, price, onPress) => {
+const BoxItemTopProduct = ({bgColor, icon, name, price, onPress}) => {
   return (
     <TouchableOpacity style={styles.container(bgColor)} onPress={onPress}>
       <View style={{top: -40}}>
         <View>
           <Image source={icon} style={styles.image} />
           <WhiteSpace height={20} />
-          <Text style={styles.text}>{text}</Text>
+          <Text style={styles.text}>{name}</Text>
         </View>
         <WhiteSpace height={20} />
         <View style={styles.price}>
@@ -29,16 +29,17 @@ export default BoxItemTopProduct;
 const styles = StyleSheet.create({
   container: bgColor => ({
     height: 160,
-    width: 150,
+    width: 140,
     backgroundColor: bgColor,
     borderRadius: 12,
     marginHorizontal: 16,
     marginVertical: 40,
   }),
   text: {
-    paddingLeft: 10,
     fontSize: 16,
+    color: colors.primary,
     fontFamily: fonts.Medium,
+    textAlign: 'center',
   },
   price: {
     flexDirection: 'row',

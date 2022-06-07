@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {DoctorImg} from '../../res/images/Illustrations/index';
+
 import {BoxItemTopProduct, Header} from '../../components/molecules';
 import {
   IC_Search,
@@ -24,6 +24,7 @@ import {colors} from '../../res/colors';
 import {fonts} from '../../res/fonts';
 import BoxItemCategories from '../../components/molecules/BoxItemCategories';
 import WhiteSpace from '../../components/atoms/WhiteSpace';
+import {DoctorImg} from '../../res';
 
 const Home = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -36,14 +37,14 @@ const Home = ({navigation}) => {
       description: 'Hello this is a demo description. I hope you understand.',
     },
     {
-      name: 'Mahibur Rahman',
+      name: 'Harunur Rashid',
       icon: DoctorImg,
       bgColor: 'rgba(222,205,243,0.5)',
       price: 500,
       description: 'Hello this is a demo description. I hope you understand.',
     },
     {
-      name: 'Mahibur Rahman',
+      name: 'Babul Mallik',
       icon: DoctorImg,
       bgColor: 'rgba(222,205,243,0.5)',
       price: 500,
@@ -132,7 +133,7 @@ const Home = ({navigation}) => {
                     key={index}
                     bgColor={doctor.bgColor}
                     icon={doctor.icon}
-                    text={doctor.name}
+                    name={doctor.name}
                     price={doctor.price}
                   />
                 );

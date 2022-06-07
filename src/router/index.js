@@ -6,6 +6,7 @@ import {GetStarted, Home} from '../screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Profile from '../screens/Profile';
 import BottomNavigation from '../components/molecules/BottomNavigation';
+import Categories from '../screens/Categories';
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -45,6 +46,11 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Categories"
+        component={Categories}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

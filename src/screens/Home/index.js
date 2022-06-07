@@ -39,28 +39,50 @@ const Home = ({navigation}) => {
     {
       name: 'Harunur Rashid',
       icon: DoctorImg,
-      bgColor: 'rgba(222,205,243,0.5)',
+      bgColor: 'rgba(255, 234, 232, 0.5)',
       price: 500,
       description: 'Hello this is a demo description. I hope you understand.',
     },
     {
       name: 'Babul Mallik',
       icon: DoctorImg,
-      bgColor: 'rgba(222,205,243,0.5)',
+      bgColor: 'rgba(187, 208, 136, 0.5)',
       price: 500,
       description: 'Hello this is a demo description. I hope you understand.',
     },
     {
       name: 'Mahibur Rahman',
       icon: DoctorImg,
-      bgColor: 'rgba(222,205,243,0.5)',
+      bgColor: 'rgba(140, 250, 145,0.5)',
       price: 500,
       description: 'Hello this is a demo description. I hope you understand.',
     },
     {
       name: 'Mahibur Rahman',
       icon: DoctorImg,
-      bgColor: 'rgba(222,205,243,0.5)',
+      bgColor: 'rgba(227,206,243,0.5)',
+      price: 500,
+      description: 'Hello this is a demo description. I hope you understand.',
+    },
+
+    {
+      name: 'Babul Mallik',
+      icon: DoctorImg,
+      bgColor: 'rgba(255, 234, 232, 0.5)',
+      price: 500,
+      description: 'Hello this is a demo description. I hope you understand.',
+    },
+    {
+      name: 'Mahibur Rahman',
+      icon: DoctorImg,
+      bgColor: 'rgba(187, 208, 136, 0.5)',
+      price: 500,
+      description: 'Hello this is a demo description. I hope you understand.',
+    },
+    {
+      name: 'Mahibur Rahman',
+      icon: DoctorImg,
+      bgColor: 'rgba(140, 250, 145,0.5)',
       price: 500,
       description: 'Hello this is a demo description. I hope you understand.',
     },
@@ -86,32 +108,34 @@ const Home = ({navigation}) => {
               <BoxItemCategories
                 icon={<IC_Fruits />}
                 color="rgba(169, 178, 169, 0.5)"
-                text="Fruits"
-                onPress={() => navigation.navigate('Categories', 'Fruits')}
+                text="Teeth"
+                onPress={() => navigation.navigate('Categories', 'Teeth')}
               />
               <BoxItemCategories
                 icon={<IC_Vegetables />}
                 color="rgba(233, 255, 210, 0.5)"
-                text="Vegetables"
-                onPress={() => navigation.navigate('Categories', 'Vegetables')}
+                text="Cavity"
+                onPress={() => navigation.navigate('Categories', 'Cavity')}
               />
               <BoxItemCategories
                 icon={<IC_Drinks />}
                 color="rgba(140, 175, 53, 0.5)"
-                text="Drinks"
-                onPress={() => navigation.navigate('Categories', 'Drinks')}
+                text="Surgery"
+                onPress={() => navigation.navigate('Categories', 'Surgery')}
               />
               <BoxItemCategories
                 icon={<IC_Bakery />}
                 color="rgba(214, 255, 218, 0.5)"
-                text="Bakery"
-                onPress={() => navigation.navigate('Categories', 'Bakery')}
+                text="Pediatric"
+                onPress={() => navigation.navigate('Categories', 'Pediatric')}
               />
               <BoxItemCategories
                 icon={<IC_Bakery2 />}
                 color="rgba(255, 250, 204, 0.5)"
-                text="Bakery"
-                onPress={() => navigation.navigate('Categories', 'Bakery')}
+                text="Orthopaedics"
+                onPress={() =>
+                  navigation.navigate('Categories', 'Orthopaedics')
+                }
               />
             </ScrollView>
           </View>

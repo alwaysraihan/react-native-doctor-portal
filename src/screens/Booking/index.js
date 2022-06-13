@@ -1,5 +1,6 @@
 import {
   Image,
+  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -9,13 +10,14 @@ import {
 } from 'react-native';
 import React from 'react';
 import {Header} from '../../components/molecules';
+import {colors, fonts} from '../../res';
 
 const Booking = ({route, navigation}) => {
   const dataParams = route.params;
   const bgColor = route.params.bgColor;
   const isDakMode = useColorScheme() === 'dark';
   return (
-    <ScrollView style={styles.flex1(bgColor)}>
+    <SafeAreaView style={styles.flex1(bgColor)}>
       <StatusBar barStyle={isDakMode ? 'light-content' : 'dark-content'} />
       <View>
         {/* header  */}
@@ -25,9 +27,16 @@ const Booking = ({route, navigation}) => {
           <Image source={dataParams.icon} style={styles.image} />
         </View>
         {/* content  */}
+        <View style={styles.content}>
+          {/* top content  */}
+          <View style={styles.wrapperTopContent}>
+            <View style={styles.rowTopContent}>
+              <Text style={styles.name}>{dataParams.name}</Text>
+            </View>
+          </View>
+        </View>
       </View>
-      <Text>index</Text>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -46,5 +55,26 @@ const styles = StyleSheet.create({
     height: 150,
     width: 150,
     resizeMode: 'contain',
+  },
+  content: {
+    backgroundColor: colors.white,
+    height: '100%',
+    width: '100%',
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    marginTop: 30,
+    paddingTop: 34,
+  },
+  wrapperTopContent: {
+    marginBottom: 28,
+    paddingHorizontal: 20,
+  },
+  rowTopContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  name: {
+    fontFamily: fonts.SemiBold,
+    fontSize: 20,
   },
 });

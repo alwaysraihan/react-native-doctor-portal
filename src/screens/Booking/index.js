@@ -1,4 +1,5 @@
 import {
+  Image,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -19,6 +20,11 @@ const Booking = ({route, navigation}) => {
       <View>
         {/* header  */}
         <Header onPress={() => navigation.goBack()} />
+        {/* Image  */}
+        <View style={styles.wrapperImage}>
+          <Image source={dataParams.icon} style={styles.image} />
+        </View>
+        {/* content  */}
       </View>
       <Text>index</Text>
     </ScrollView>
@@ -32,4 +38,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: bgColor,
   }),
+  wrapperImage: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    height: 150,
+    width: 150,
+    resizeMode: 'contain',
+  },
 });

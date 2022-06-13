@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -7,6 +7,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Profile from '../screens/Profile';
 import BottomNavigation from '../components/molecules/BottomNavigation';
 import Categories from '../screens/Categories';
+import Booking from '../screens/Booking';
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -51,6 +52,11 @@ const Router = () => {
       <Stack.Screen
         name="Categories"
         component={Categories}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Booking"
+        component={Booking}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

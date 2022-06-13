@@ -29,7 +29,7 @@ const Header = ({drawer, back, cart, onPress}) => {
   }
   return (
     <View style={styles.wrapperHeader}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPress}>
         <IC_Back />
       </TouchableOpacity>
     </View>

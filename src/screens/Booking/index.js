@@ -33,6 +33,9 @@ const Booking = ({route, navigation}) => {
             <View style={styles.rowTopContent}>
               <Text style={styles.name}>{dataParams.name}</Text>
             </View>
+            <View style={styles.description}>
+              <Text>{dataParams.description}</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -76,5 +79,9 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: fonts.SemiBold,
     fontSize: 20,
+  },
+  description: {
+    marginTop: 20,
+    color: colors.grey,
   },
 });

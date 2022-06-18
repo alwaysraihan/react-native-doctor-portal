@@ -119,6 +119,7 @@ const Categories = ({route, navigation}) => {
                   icon={doctor.icon}
                   name={doctor.name}
                   price={doctor.price}
+                  onPress={() => navigation.navigate('Booking', doctor)}
                 />
               );
             })}

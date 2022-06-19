@@ -10,6 +10,7 @@ import React, {useEffect, useState} from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import {colors} from '../../res';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import SplashScreen from '../SplashScreen';
 
 const Skip = ({...props}) => (
   <TouchableOpacity {...props}>
@@ -62,6 +63,7 @@ const Dots = ({selected}) => {
   );
 };
 const Onbaording = ({navigation}) => {
+  const [Loading, setLoading] = useState(true);
   useEffect(() => {
     getLunched();
   }, [getLunched, navigation]);
@@ -69,7 +71,10 @@ const Onbaording = ({navigation}) => {
     try {
       await AsyncStorage.getItem('isFirstLaunch').then(value => {
         if (value != null) {
+          setLoading(false);
           navigation.replace('MainApp');
+        } else if (value === null) {
+          setLoading(false);
         }
       });
     } catch (error) {
@@ -84,14 +89,18 @@ const Onbaording = ({navigation}) => {
       console.log(error);
     }
   };
-
+  if (Loading) {
+    return <SplashScreen />;
+  }
   return (
     <Onboarding
       SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DoneButtonComponent={Done}
       DotComponent={Dots}
-      onSkip={() => navigation.replace('MainApp')}
+      onSkip={() => {
+        setLaunced();
+      }}
       onDone={() => {
         setLaunced();
       }}

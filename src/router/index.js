@@ -14,8 +14,6 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainApp() {
-  const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
-  useEffect(() => {});
   return (
     <Tab.Navigator tabBar={props => <BottomNavigation {...props} />}>
       <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />

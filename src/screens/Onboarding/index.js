@@ -6,9 +6,10 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import {colors} from '../../res';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Skip = ({...props}) => (
   <TouchableOpacity {...props}>
@@ -61,6 +62,29 @@ const Dots = ({selected}) => {
   );
 };
 const Onbaording = ({navigation}) => {
+  useEffect(() => {
+    getLunched();
+  }, [getLunched, navigation]);
+  const getLunched = async () => {
+    try {
+      await AsyncStorage.getItem('isFirstLaunch').then(value => {
+        if (value != null) {
+          navigation.replace('MainApp');
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const setLaunced = async () => {
+    try {
+      await AsyncStorage.setItem('isFirstLaunch', 'lunch');
+      navigation.replace('MainApp');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Onboarding
       SkipButtonComponent={Skip}
@@ -68,7 +92,9 @@ const Onbaording = ({navigation}) => {
       DoneButtonComponent={Done}
       DotComponent={Dots}
       onSkip={() => navigation.replace('MainApp')}
-      onDone={() => navigation.navigate('MainApp')}
+      onDone={() => {
+        setLaunced();
+      }}
       pages={[
         {
           backgroundColor: '#a6e4d0',

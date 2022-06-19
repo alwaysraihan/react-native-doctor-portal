@@ -8,6 +8,7 @@ import Profile from '../screens/Profile';
 import BottomNavigation from '../components/molecules/BottomNavigation';
 import Categories from '../screens/Categories';
 import Booking from '../screens/Booking';
+import OnboardingScreen from '../screens/Onboarding';
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -39,8 +40,8 @@ const Router = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="GetStarted"
-        component={GetStarted}
+        name="Onboarding"
+        component={OnboardingScreen}
         options={{headerShown: false}}
       />
 

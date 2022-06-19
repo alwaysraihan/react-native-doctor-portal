@@ -8,6 +8,7 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 import React from 'react';
 
@@ -97,8 +98,13 @@ const Home = ({navigation}) => {
           {/* Search  */}
           <View style={{paddingHorizontal: 20}}>
             <View style={styles.wrapperSearch}>
-              <TextInput placeholder="Search" style={styles.textInputSearch} />
-              <IC_Search />
+              <KeyboardAvoidingView>
+                <TextInput
+                  placeholder="Search"
+                  style={styles.textInputSearch}
+                />
+              </KeyboardAvoidingView>
+              <IC_Search style={styles.searchIcon} />
             </View>
           </View>
           {/* Catagories  */}
@@ -183,6 +189,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 25,
+  },
+  textInputSearch: {
+    width: '95%',
+  },
+  searchIcon: {
+    marginRight: 20,
   },
   titleCategories: {
     fontSize: 18,

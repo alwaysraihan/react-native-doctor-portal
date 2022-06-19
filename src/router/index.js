@@ -9,6 +9,7 @@ import BottomNavigation from '../components/molecules/BottomNavigation';
 import Categories from '../screens/Categories';
 import Booking from '../screens/Booking';
 import OnboardingScreen from '../screens/Onboarding';
+import SplashScreen from '../screens/SplashScreen';
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -48,6 +49,11 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Splash"
+        component={SplashScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen

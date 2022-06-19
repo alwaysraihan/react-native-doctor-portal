@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {GetStarted, Home} from '../screens';
@@ -14,6 +14,8 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function MainApp() {
+  const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
+  useEffect(() => {});
   return (
     <Tab.Navigator tabBar={props => <BottomNavigation {...props} />}>
       <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />

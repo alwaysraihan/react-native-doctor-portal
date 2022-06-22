@@ -1,18 +1,31 @@
-import {StyleSheet, View, Image} from 'react-native';
+import {StyleSheet, View, Image, Text} from 'react-native';
 import React from 'react';
 import LottieView from 'lottie-react-native';
+import {colors} from '../../res/colors';
+import {fonts} from '../../res/fonts';
 const SplashScreen = () => {
   return (
     <View style={styles.flex1}>
-      <Image
+      {/* <Image
         style={styles.image}
         source={require('../../res/images/Illustrations/doctor.png')}
-      />
-      <LottieView
-        source={require('../../res/lottie/doctors.json')}
-        autoPlay
-        loop
-      />
+      /> */}
+
+      <View
+        style={{
+          paddingTop: 10,
+          paddingHorizontal: 10,
+          borderRadius: 10,
+          backgroundColor: colors.primary,
+        }}>
+        <LottieView
+          style={styles.container}
+          source={require('../../res/lottie/online-doctor-app.json')}
+          autoPlay
+          loop
+        />
+      </View>
+      <Text style={styles.title}>Doctor Portal</Text>
     </View>
   );
 };
@@ -26,8 +39,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ffffff',
   },
-  image: {
-    width: 150,
-    height: 150,
+  // image: {
+  //   width: 150,
+  //   height: 150,
+  //   borderRadius: 20,
+  //   backgroundColor: colors.primary,
+  // },
+  title: {
+    fontSize: 24,
+    fontFamily: fonts.SemiBold,
+    color: colors.primary,
+    marginTop: 10,
+  },
+  container: {
+    height: 200,
+    width: 200,
   },
 });

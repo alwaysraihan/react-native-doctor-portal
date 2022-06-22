@@ -1,2 +1,3 @@
 import doctorLottie from './doctors.json';
-export {doctorLottie};
+import doctorLottie2 from './doctor.json';
+export {doctorLottie, doctorLottie2};
